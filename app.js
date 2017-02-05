@@ -6,6 +6,7 @@ var sqlite3 = require('sqlite3').verbose(),
 
 [
     'default',
+	'endpoints',
     'class/class',
     'class/classdependencyfeats',
     'class/classdependencyraces',
@@ -51,4 +52,4 @@ var sqlite3 = require('sqlite3').verbose(),
   controller.setup(app, db, sqlHelper);
 });
 
-app.listen(80);
+app.listen(81);

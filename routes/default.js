@@ -28,9 +28,9 @@ module.exports = {
 			html += "<p><a href='/feat/prerequisite/skills'>/feat/prerequisite/skills</a> <i>(needs guid)</i></p>";
 			html += "<p><a href='/feat/related/feats'>/feat/related/feats</a> <i>(needs guid)</i></p>";
 			html += "<p><a href='/feat/requirements/special'></a></p>";
+			html += "<p><a href='/feats'>/feats</a></p>";
 			html += "<p><a href='/feats/categories'>/feats/categories</a></p>";
 			html += "<p><a href='/feats/categories/feats'>/feats/categories/feats</a> <i>(needs guid)</i></p>";
-			html += "<p><a href='/feats'>/feats</a></p>";
 			html += "<p><a href='/items'>/items</a></p>";
 			html += "<p><a href='/languages'>/languages</a></p>";
 			html += "<p><a href='/monsters'>/monsters</a></p>";
@@ -54,6 +54,8 @@ module.exports = {
             html += "<p><a href='/spells/subschools'>/spells/subschools</a></p>";
             html += "<p><a href='/spells/subschools/spells'>/spells/subschools/spells</a> <i>(needs guid)</i></p>";
             html += "<p>&nbsp;</p>";
+			html += "<p>List of all endpoints in JSON:</p>";
+			html += "<p><a href='/endpoints'>/endpoints</a></p>";
 			//html += "";
 			html += "</body>";
 			html += "</html>";
