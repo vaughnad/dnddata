@@ -18,7 +18,8 @@ module.exports = {
             LEFT OUTER JOIN dnd_rulebook ON dnd_feat.rulebook_id = dnd_rulebook.id
             LEFT OUTER JOIN dnd_dndedition ON dnd_rulebook.dnd_edition_id = dnd_dndedition.id`;
 
-            if (sqlParams.guid) {
+            if (sqlParams.guid == "-1"){
+            } else if (sqlParams.guid) {
                 sql += " WHERE dnd_feat.slug = (SELECT dnd_feat.slug FROM dnd_feat LEFT OUTER JOIN dnd_rulebook ON dnd_feat.rulebook_id = dnd_rulebook.id WHERE dnd_feat.id = " + sqlParams.guid + ")";
             }
             else {

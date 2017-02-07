@@ -15,7 +15,8 @@ module.exports = {
             LEFT OUTER JOIN dnd_characterclass ON dnd_spellclasslevel.character_class_id = dnd_characterclass.id
             LEFT OUTER JOIN dnd_spell ON dnd_spellclasslevel.spell_id = dnd_spell.id`;
 
-            if (sqlParams.guid) {
+            if (sqlParams.guid == "-1"){
+            } else if (sqlParams.guid) {
                 sql += " WHERE guid = " + sqlParams.guid + "";
             }
             else {

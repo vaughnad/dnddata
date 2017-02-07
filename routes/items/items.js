@@ -17,8 +17,9 @@ module.exports = {
 
             if (sqlParams.guid) {
                 sql += " WHERE guid = " + sqlParams.guid + "";
-                sqlParams.guid = undefined;
             }
+                
+			sqlParams.guid = undefined;
 
             db.serialize(() => {
                 db.each(sqlHelper.addSqlParam(sql, sqlParams), function(err, row) {

@@ -15,12 +15,14 @@ module.exports = {
             FROM dnd_characterclassvariantrequiresskill
             LEFT OUTER JOIN dnd_skill ON dnd_characterclassvariantrequiresskill.skill_id = dnd_skill.id`;
 
-            if (sqlParams.guid) {
+            if (sqlParams.guid == "-1"){
+            } else if (sqlParams.guid) {
                 sql += " WHERE guid = " + sqlParams.guid + "";
-                sqlParams.guid = undefined;
             } else {
 				sql += " WHERE guid = 0";
 			}
+			
+			sqlParams.guid = undefined;
 
             db.serialize(() => {
                 db.each(sqlHelper.addSqlParam(sql, sqlParams), function(err, row) {

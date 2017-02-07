@@ -14,7 +14,8 @@ module.exports = {
             var sql = `SELECT dnd_spelldomainlevel.spell_id AS guid, dnd_domain.* FROM dnd_spelldomainlevel
             LEFT OUTER JOIN dnd_domain ON dnd_spelldomainlevel.domain_id = dnd_domain.id`;
 
-            if (sqlParams.guid) {
+            if (sqlParams.guid == "-1"){
+            } else if (sqlParams.guid) {
                 sql += " WHERE guid = " + sqlParams.guid + "";
             }
             else {

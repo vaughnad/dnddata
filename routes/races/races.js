@@ -18,8 +18,9 @@ module.exports = {
 
             if (sqlParams.guid) {
                 sql += " WHERE guid = 0";
-                sqlParams.guid = undefined;
             }
+                
+			sqlParams.guid = undefined;
             
 
             db.serialize(() => {

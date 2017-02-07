@@ -23,12 +23,14 @@ module.exports = {
             LEFT OUTER JOIN dnd_rulebook ON dnd_spell.rulebook_id = dnd_rulebook.id
             LEFT OUTER JOIN dnd_dndedition ON dnd_rulebook.dnd_edition_id = dnd_dndedition.id`;
 
-            if (sqlParams.guid) {
+            if (sqlParams.guid == "-1"){
+            } else if (sqlParams.guid) {
                 sql += " WHERE dnd_spellclasslevel.character_class_id = (SELECT dnd_characterclassvariant.character_class_id FROM dnd_characterclassvariant WHERE dnd_characterclassvariant.id = " + sqlParams.guid + ")";
-                sqlParams.guid = undefined;
             } else {
 				sql += " WHERE guid = 0";
 			}
+			
+			sqlParams.guid = undefined;
 
             db.serialize(() => {
                 db.each(sqlHelper.addSqlParam(sql, sqlParams), function(err, row) {
