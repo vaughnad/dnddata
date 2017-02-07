@@ -4,6 +4,12 @@ var sqlite3 = require('sqlite3').verbose(),
 	app = express(),
 	sqlHelper = require('./helpers/sql');
 
+app.use(function(req, res, next){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+});
+
 [
     'default',
 	'endpoints',
