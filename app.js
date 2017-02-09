@@ -21,6 +21,7 @@ app.use(function(req, res, next){
     'class/classspells',
     'classes/classes',
     'deities/deities',
+    'editions/editions',
     'feat/feat',
     'feat/featcategories',
     'feat/featdependencyfeats',

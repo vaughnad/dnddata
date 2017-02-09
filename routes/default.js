@@ -21,6 +21,7 @@ module.exports = {
 			html += "<p><a href='/class/spells'>/class/spells</a> <i>(needs guid)</i></p>";
 			html += "<p><a href='/classes'>/classes</a></p>";
 			html += "<p><a href='/deities'>/deities</a></p>";
+			html += "<p><a href='/editions'>/editions</a></p>";
 			html += "<p><a href='/feat'>/feat</a> <i>(needs guid)</i></p>";
 			html += "<p><a href='/feat/categories'>/feat/categories</a> <i>(needs guid)</i></p>";
 			html += "<p><a href='/feat/dependency/feats'>/feat/dependency/feats</a> <i>(needs guid)</i></p>";
