@@ -1,4 +1,4 @@
-var sqlite3 = require('sqlite3').verbose(),
+var sqlite3 = require('sqlite3').verbose();
 	db = new sqlite3.Database('./data/dnd.sqlite'),
 	express = require('express'),
 	app = express(),
@@ -59,4 +59,4 @@ app.use(function(req, res, next){
   controller.setup(app, db, sqlHelper);
 });
 
-app.listen(80);
+app.listen(81);

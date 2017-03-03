@@ -6,6 +6,11 @@ module.exports = {
             extraSql = addAndToSql(extraSql);
             extraSql += " guid = " + params.id;
         }
+		
+		if (params.slug) {
+            extraSql = addAndToSql(extraSql);
+            extraSql += " slug = '" + params.slug + "'";
+        }
         
         if (params.limit) {
             extraSql += " LIMIT " + params.limit;
@@ -17,6 +22,7 @@ module.exports = {
     getSqlParams: (req) => {
         return {
             guid: req.query.guid,
+			slug: req.query.slug,
             limit: req.query.limit
         }
     },
