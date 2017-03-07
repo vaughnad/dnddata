@@ -1,8 +1,7 @@
 var sqlite3 = require('sqlite3').verbose();
 	db = new sqlite3.Database('./data/dnd.sqlite'),
 	express = require('express'),
-	app = express(),
-	sqlHelper = require('./helpers/sql');
+	app = express();
 
 app.use(function(req, res, next){
 	res.header("Access-Control-Allow-Origin", "*");
@@ -11,9 +10,14 @@ app.use(function(req, res, next){
 });
 
 [
-    'default',
-	'endpoints',
-    'class/class',
+    ['default', '/'],
+	['class/class', '/class'],
+	['class/class/class', '/class/:id'],
+	['class/class/skills/skills', '/class/:id/skills'],
+	['class/class/spells/spells', '/class/:id/spells'],
+	//['endpoints', '/endpoints']
+
+	/*'class/class',
     'class/classdependencyfeats',
     'class/classdependencyraces',
     'class/classdependencyskills',
@@ -53,10 +57,10 @@ app.use(function(req, res, next){
     'spells/spellschools',
     'spells/spellschoolspells',
     'spells/spellsubschools',
-    'spells/spellsubschoolspells'
+    'spells/spellsubschoolspells'*/
 ].map((controllerName) => {
-  controller = require('./routes/' + controllerName);
-  controller.setup(app, db, sqlHelper);
+  controller = require('./routes/' + controllerName[0]);
+  controller.setup(app, db, controllerName[1]);
 });
 
 app.listen(81);

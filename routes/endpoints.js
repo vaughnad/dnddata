@@ -1,11 +1,9 @@
-var endpoint = "/endpoints";
-
-
 module.exports = {
-    setup: (app, db, sqlHelper) => {
+    setup: (app, db, endpoint) => {
         /* CHARACTERCLASS ENDPOINT */
         console.log("Registering endpoint: " + endpoint);
         app.get(endpoint, (req, res) => {
+			/*
             var result = [
 				{"alias": "class", "path":"class", "guid": true, "relation": "classes", "related": "class"},
 				{"alias": "classdependencyfeats", "path":"class/dependency/feats", "guid": true, "relation": "class", "related": "feats"},
@@ -49,6 +47,7 @@ module.exports = {
 				{"alias": "spellsubschools", "path":"spells/subschools", "guid": false, "relation": "", "related": "spell/subschool"},
 				{"alias": "spellsubschoolspells", "path":"spells/subschools/spells", "guid": true, "relation": "spellsubschools", "related": "spell"}];
 			res.json(result);
+			*/
         });
     }
 }

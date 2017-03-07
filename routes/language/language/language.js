@@ -1,4 +1,4 @@
-var endpoint = "/class/skills";
+var endpoint = "/languages";
 
 
 module.exports = {
@@ -11,16 +11,12 @@ module.exports = {
 
             var result = [];
             
-            var sql = `SELECT dnd_characterclassvariant_class_skills.characterclassvariant_id AS guid, * FROM dnd_characterclassvariant_class_skills
-            LEFT OUTER JOIN dnd_skill ON dnd_skill.id = dnd_characterclassvariant_class_skills.skill_id`;
+            var sql = `SELECT dnd_language.id AS guid, dnd_language.* FROM dnd_language`;
 
-            if (sqlParams.guid == "-1"){
-            } else if (sqlParams.guid) {
+            if (sqlParams.guid) {
                 sql += " WHERE guid = " + sqlParams.guid + "";
-            } else {
-				sql += " WHERE guid = 0";
-			}
-			
+            }
+                
 			sqlParams.guid = undefined;
 
             db.serialize(() => {

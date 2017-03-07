@@ -1,8 +1,12 @@
 module.exports = {
-    setup: (app, db) => {
+    setup: (app, db, endpoint) => {
         /* DEFAULT ENDPOINT */
         console.log("Registering endpoint: /");
-        app.get('/', (req, res) => {
+		
+		
+        app.get(endpoint, (req, res) => {
+			
+			/*
 			var html = "";
 			html += "<html>";
 			html += "<head>";
@@ -62,6 +66,7 @@ module.exports = {
 			html += "</html>";
 			
             res.send(html);
+			*/
         });
     }
 }
