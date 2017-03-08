@@ -1,36 +1,23 @@
-var endpoint = "/class/dependency/skills";
-
-
 module.exports = {
-    setup: (app, db, sqlHelper) => {
-        /* SPELL ENDPOINT */
-        console.log("Registering endpoint: " + endpoint);
-        app.get(endpoint, (req, res) => {
+    string: (req) => {
+        
+        // SELECT
+        var sql = `SELECT 
+        dnd_characterclassvariantrequiresskill.character_class_variant_id AS itemid, 
+        dnd_characterclassvariantrequiresskill.*, 
+        dnd_skill.*
 
-            var sqlParams = sqlHelper.getSqlParams(req);
+        FROM dnd_characterclassvariantrequiresskill
 
-            var result = [];
-            
-            var sql = `SELECT dnd_characterclassvariantrequiresskill.character_class_variant_id AS guid, dnd_characterclassvariantrequiresskill.*, dnd_skill.*
-            FROM dnd_characterclassvariantrequiresskill
-            LEFT OUTER JOIN dnd_skill ON dnd_characterclassvariantrequiresskill.skill_id = dnd_skill.id`;
+        LEFT OUTER JOIN dnd_skill ON dnd_characterclassvariantrequiresskill.skill_id = dnd_skill.id
+        `;
 
-            if (sqlParams.guid == "-1"){
-            } else if (sqlParams.guid) {
-                sql += " WHERE guid = " + sqlParams.guid + "";
-            } else {
-				sql += " WHERE guid = 0";
-			}
-			
-			sqlParams.guid = undefined;
-
-            db.serialize(() => {
-                db.each(sqlHelper.addSqlParam(sql, sqlParams), function(err, row) {
-                    result.push(row);
-                }, () => {
-                    res.json(result);
-                });
-            });
-        });
+        // WHERE
+        sql += " WHERE itemid = '" + req.params.id + "'";
+        
+        // ORDER BY
+        sql += " ORDER BY dnd_skill.name ASC";
+        
+        return sql;
     }
 }

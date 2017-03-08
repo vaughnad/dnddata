@@ -1,36 +1,22 @@
-var endpoint = "/spell/domains";
-
-
 module.exports = {
-    setup: (app, db, sqlHelper) => {
-        /* SPELL ENDPOINT */
-        console.log("Registering endpoint: " + endpoint);
-        app.get(endpoint, (req, res) => {
+    string: (req) => {
+        
+        // SELECT
+        var sql = `SELECT 
+        dnd_spelldomainlevel.spell_id AS itemid, 
+        dnd_domain.* 
 
-            var sqlParams = sqlHelper.getSqlParams(req);
+        FROM dnd_spelldomainlevel
 
-            var result = [];
-            
-            var sql = `SELECT dnd_spelldomainlevel.spell_id AS guid, dnd_domain.* FROM dnd_spelldomainlevel
-            LEFT OUTER JOIN dnd_domain ON dnd_spelldomainlevel.domain_id = dnd_domain.id`;
-
-            if (sqlParams.guid == "-1"){
-            } else if (sqlParams.guid) {
-                sql += " WHERE guid = " + sqlParams.guid + "";
-            }
-            else {
-                sql += " WHERE guid = 0";
-            }
-			
-			sqlParams.guid = undefined;
-
-            db.serialize(() => {
-                db.each(sqlHelper.addSqlParam(sql, sqlParams), function(err, row) {
-                    result.push(row);
-                }, () => {
-                    res.json(result);
-                });
-            });
-        });
+        LEFT OUTER JOIN dnd_domain ON dnd_spelldomainlevel.domain_id = dnd_domain.id
+        `;
+        
+        // WHERE
+        sql += " WHERE itemid = '" + req.params.id + "'";
+        
+        // ORDER BY
+        //sql += "";
+        
+        return sql;
     }
 }
