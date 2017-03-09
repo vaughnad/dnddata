@@ -4,74 +4,92 @@ module.exports = {
         console.log("Registering endpoint: " + endpoint);
         app.get(endpoint, (req, res) => {
             var endpoints = [
-    
-                {'path':'/class', 'show':'/'},
-                {'path':'/class/:id', 'show':''},
-                {'path':'/class/:id/skills', 'show':''},
-                {'path':'/class/:id/spells', 'show':''},
-                {'path':'/class/:id/prerequisite/feats', 'show':''},
-                {'path':'/class/:id/prerequisite/races', 'show':''},
-                {'path':'/class/:id/prerequisite/skills', 'show':''},
-
-                {'path':'/deity', 'show':'/'},
-                {'path':'/deity/:id', 'show':''},
-
-                {'path':'/edition', 'show':'/'},
-                {'path':'/edition/:id', 'show':''},
-
-                {'path':'/feat', 'show':'/'},
-                {'path':'/feat/:id', 'show':''},
-                {'path':'/feat/:id/categories', 'show':''},
-                {'path':'/feat/:id/dependency/feats', 'show':''},
-                {'path':'/feat/:id/prerequisite/feats', 'show':''},
-                {'path':'/feat/:id/prerequisite/skills', 'show':''},
-                {'path':'/feat/:id/prerequisite/specials', 'show':''},
-                {'path':'/feat/:id/related', 'show':''},
-
-                {'path':'/feat-category', 'show':'/feat'},
-                {'path':'/feat-category/:id', 'show':''},
-                {'path':'/feat-category/:id/feats', 'show':''},
-
-                {'path':'/item', 'show':'/'},
-                {'path':'/item/:id', 'show':''},
-
-                {'path':'/language', 'show':'/'},
-                {'path':'/language/:id', 'show':''},
-
-                {'path':'/monster', 'show':'/'},
-                {'path':'/monster/:id', 'show':''},
-
-                {'path':'/race', 'show':'/'},
-                {'path':'/race/:id', 'show':''},
-
-                {'path':'/rulebook', 'show':'/'},
-                {'path':'/rulebook/:id', 'show':''},
-
-                {'path':'/skill', 'show':'/'},
-                {'path':'/skill/:id', 'show':''},
-
-                {'path':'/spell', 'show':'/'},
-                {'path':'/spell/:id', 'show':''},
-                {'path':'/spell/:id/classes', 'show':''},
-                {'path':'/spell/:id/descriptors', 'show':''},
-                {'path':'/spell/:id/domains', 'show':''},
-
-                {'path':'/spell-descriptor', 'show':'/spell'},
-                {'path':'/spell-descriptor/:id', 'show':''},
-                {'path':'/spell-descriptor/:id/spells', 'show':''},
-
-                {'path':'/spell-domain', 'show':'/spell'},
-                {'path':'/spell-domain/:id', 'show':''},
-                {'path':'/spell-domain/:id/spells', 'show':''},
-
-                {'path':'/spell-school', 'show':'/spell'},
-                {'path':'/spell-school/:id', 'show':''},
-                {'path':'/spell-school/:id/spells', 'show':''},
-
-                {'path':'/spell-subschool', 'show':'/spell'},
-                {'path':'/spell-subschool/:id', 'show':''},
-                {'path':'/spell-subschool/:id/spells', 'show':''}
-
+    			
+				{'path':'/rulebook', 'show':'/', 'render':true, 'children':true, 'menu':'Rulebooks'},
+                {'path':'/rulebook/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+				{'path':'/edition', 'show':'/rulebook', 'render':true, 'children':false, 'menu':'Editions'},
+                {'path':'/edition/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+				
+				
+				{'path':'/race', 'show':'/', 'render':true, 'children':false, 'menu':'Races'},
+                {'path':'/race/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+				
+				
+                {'path':'/class', 'show':'/', 'render':true, 'children':false, 'menu':'Classes'},
+                {'path':'/class/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+                {'path':'/class/:id/skills', 'show':'', 'render':false, 'children':false, 'menu':''},
+                {'path':'/class/:id/spells', 'show':'', 'render':false, 'children':false, 'menu':''},
+                {'path':'/class/:id/prerequisite/feats', 'show':'', 'render':false, 'children':false, 'menu':''},
+                {'path':'/class/:id/prerequisite/races', 'show':'', 'render':false, 'children':false, 'menu':''},
+                {'path':'/class/:id/prerequisite/skills', 'show':'', 'render':false, 'children':false, 'menu':''},
+				
+				
+				
+				{'path':'/feat', 'show':'/', 'render':true, 'children':true, 'menu':'Feats'},
+                {'path':'/feat/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+                {'path':'/feat/:id/categories', 'show':'', 'render':false, 'children':false, 'menu':''},
+                {'path':'/feat/:id/dependency/feats', 'show':'', 'render':false, 'children':false, 'menu':''},
+                {'path':'/feat/:id/prerequisite/feats', 'show':'', 'render':false, 'children':false, 'menu':''},
+                {'path':'/feat/:id/prerequisite/skills', 'show':'', 'render':false, 'children':false, 'menu':''},
+                {'path':'/feat/:id/prerequisite/specials', 'show':'', 'render':false, 'children':false, 'menu':''},
+                {'path':'/feat/:id/related', 'show':'', 'render':false, 'children':false, 'menu':''},
+				
+                {'path':'/feat-category', 'show':'/feat', 'render':true, 'children':false, 'menu':'Feat Categories'},
+                {'path':'/feat-category/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+                {'path':'/feat-category/:id/feats', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+				
+				
+				{'path':'/skill', 'show':'/', 'render':true, 'children':false, 'menu':'Skills'},
+                {'path':'/skill/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+				
+				
+				{'path':'/language', 'show':'/', 'render':true, 'children':false, 'menu':'Languages'},
+                {'path':'/language/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+				
+				
+                {'path':'/deity', 'show':'/', 'render':true, 'children':false, 'menu':'Deities'},
+                {'path':'/deity/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+				
+				
+				{'path':'/spell', 'show':'/', 'render':true, 'children':true, 'menu':'Spells'},
+                {'path':'/spell/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+                {'path':'/spell/:id/classes', 'show':'', 'render':false, 'children':false, 'menu':''},
+                {'path':'/spell/:id/descriptors', 'show':'', 'render':false, 'children':false, 'menu':''},
+                {'path':'/spell/:id/domains', 'show':'', 'render':false, 'children':false, 'menu':''},
+				
+                {'path':'/spell-descriptor', 'show':'/spell', 'render':true, 'children':false, 'menu':'Spell Descriptors'},
+                {'path':'/spell-descriptor/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+                {'path':'/spell-descriptor/:id/spells', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+                {'path':'/spell-domain', 'show':'/spell', 'render':true, 'children':false, 'menu':'Spell Domains'},
+                {'path':'/spell-domain/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+                {'path':'/spell-domain/:id/spells', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+                {'path':'/spell-school', 'show':'/spell', 'render':true, 'children':false, 'menu':'Spell Schools'},
+                {'path':'/spell-school/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+                {'path':'/spell-school/:id/spells', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+                {'path':'/spell-subschool', 'show':'/spell', 'render':true, 'children':false, 'menu':'Spell Subschools'},
+                {'path':'/spell-subschool/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+                {'path':'/spell-subschool/:id/spells', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+				
+				
+                {'path':'/item', 'show':'/', 'render':true, 'children':false, 'menu':'Items'},
+                {'path':'/item/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
+                
+				
+                {'path':'/monster', 'show':'/', 'render':true, 'children':false, 'menu':'Monsters'},
+                {'path':'/monster/:id', 'show':'', 'render':true, 'children':false, 'menu':''},
+				
             ]
 			
 			res.json(endpoints);
