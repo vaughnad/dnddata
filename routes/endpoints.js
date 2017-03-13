@@ -6,15 +6,15 @@ module.exports = {
             var endpoints = [
     			
 				{'path':'/rulebook', 'show':'/', 'render':true, 'children':true, 'menu':'Rulebooks', 'alias':'rulebook'},
-                {'path':'/rulebook/:id', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook', 'alias':'rulebook-item'},
+                {'path':'/rulebook/:id', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook', 'alias':'rulebook-id'},
 				
 				{'path':'/edition', 'show':'/rulebook', 'render':true, 'children':false, 'menu':'Editions', 'alias':'edition'},
-                {'path':'/edition/:id', 'show':'', 'render':true, 'children':false, 'menu':'Edition', 'alias':'edition-item'},
+                {'path':'/edition/:id', 'show':'', 'render':true, 'children':false, 'menu':'Edition', 'alias':'edition-id'},
 				
 				
 				
 				{'path':'/race', 'show':'/', 'render':true, 'children':false, 'menu':'Races', 'alias':'race'},
-                {'path':'/race/:id', 'show':'', 'render':true, 'children':false, 'menu':'Race', 'alias':'race-item'},
+                {'path':'/race/:id', 'show':'', 'render':true, 'children':false, 'menu':'Race', 'alias':'race-id'},
 				
 				
 				
