@@ -7,6 +7,16 @@ module.exports = {
     			
 				{'path':'/rulebook', 'show':'/', 'render':true, 'children':true, 'menu':'Rulebooks', 'alias':'rulebook'},
                 {'path':'/rulebook/:id', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook', 'alias':'rulebook-id'},
+                {'path':'/rulebook/:id/class', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook Classes', 'alias':'rulebook-id-class'},
+                {'path':'/rulebook/:id/class/:sid', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook Class', 'alias':'rulebook-id-class-id'},
+				{'path':'/rulebook/:id/feat', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook Feats', 'alias':'rulebook-id-feat'},
+                {'path':'/rulebook/:id/feat/:sid', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook Feat', 'alias':'rulebook-id-feat-id'},
+				{'path':'/rulebook/:id/monster', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook Monsters', 'alias':'rulebook-id-monster'},
+                {'path':'/rulebook/:id/monster/:sid', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook Monster', 'alias':'rulebook-id-monster-id'},
+				{'path':'/rulebook/:id/race', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook Races', 'alias':'rulebook-id-race'},
+                {'path':'/rulebook/:id/race/:sid', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook Race', 'alias':'rulebook-id-race-id'},
+				{'path':'/rulebook/:id/spell', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook Spells', 'alias':'rulebook-id-spell'},
+                {'path':'/rulebook/:id/spell/:sid', 'show':'', 'render':true, 'children':false, 'menu':'Rulebook Spell', 'alias':'rulebook-id-spell-id'},
 				
 				{'path':'/edition', 'show':'/rulebook', 'render':true, 'children':false, 'menu':'Editions', 'alias':'edition'},
                 {'path':'/edition/:id', 'show':'', 'render':true, 'children':false, 'menu':'Edition', 'alias':'edition-id'},
