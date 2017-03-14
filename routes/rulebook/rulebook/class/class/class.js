@@ -21,7 +21,7 @@ module.exports = {
         `;
 
         // WHERE
-        sql += " WHERE dnd_rulebook.slug = '" + req.params.id + "'";
+        sql += " WHERE dnd_rulebook.slug = '" + req.params.rid + "'";
 		sql += " AND dnd_characterclass.slug = '" + req.params.sid + "'";
         
         // ORDER BY

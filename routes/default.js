@@ -19,16 +19,15 @@ module.exports = {
             endpoints.forEach(function(item, i){
                 html += "<li>";
                 
-				if(item[0].indexOf(":id") > -1 || item[0].indexOf(":sid") > -1){
+				if(item[0].indexOf(":id") > -1 || item[0].indexOf(":rid") > -1 || item[0].indexOf(":sid") > -1){
 					html += "<span>";
 					html += "" + item[0] + "";
 					if(item[0].indexOf(":id") > -1) {
-						if(item[0].indexOf("/rulebook") > -1){
-							html += " <em>(:id = slug)</em>";
-						} else {
-							html += " <em>(:id = itemid)</em>";
-						}
+						html += " <em>(:id = slug)</em>";
 					} 
+					if(item[0].indexOf(":rid") > -1) {
+						html += " <em>(:rid = slug)</em>";
+					}
 					if(item[0].indexOf(":sid") > -1) {
 						html += " <em>(:sid = slug)</em>";
 					}

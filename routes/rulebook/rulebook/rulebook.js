@@ -15,7 +15,7 @@ module.exports = {
         `;
         
         // WHERE
-        sql += " WHERE itemid = '" + req.params.id + "'";
+        sql += " WHERE itemid = '" + req.params.rid + "'";
         
         // ORDER BY
         //sql += "";
