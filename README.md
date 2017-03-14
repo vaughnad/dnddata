@@ -5,6 +5,7 @@
 
 - npm install
 - npm start
+- http://localhost/
 
 ## Online service up and running at:
-- http://138.68.114.21/
+- http://dnd.exchange/
