@@ -23,7 +23,7 @@ module.exports = {
 					html += "<span>";
 					html += "" + item[0] + "";
 					if(item[0].indexOf(":id") > -1) {
-						html += " <em>(:id = slug)</em>";
+						html += " <em>(:id = itemid)</em>";
 					} 
 					if(item[0].indexOf(":rid") > -1) {
 						html += " <em>(:rid = slug)</em>";
