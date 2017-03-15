@@ -11,6 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "express": "latest",
-    "sqlite3": "latest"
+    "sqlite3": "latest",
+	"fs": "latest",
+	"http": "latest",
+	"https": "latest"
   }
 }

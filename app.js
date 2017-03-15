@@ -1,7 +1,11 @@
-var sqlite3 = require('sqlite3').verbose();
-	db = new sqlite3.Database('./data/dnd.sqlite'),
-	express = require('express'),
+var fs = require('fs'), 
+	http = require('http'), 
+	https = require('https'), 
+	sqlite3 = require('sqlite3').verbose(), 
+	db = new sqlite3.Database('./data/dnd.sqlite'), 
+	express = require('express'), 
 	app = express();
+
 
 app.use(function(req, res, next){
 	res.header("Access-Control-Allow-Origin", "*");
@@ -89,4 +93,9 @@ endpoints.map((controllerName) => {
   controller.setup(app, db, controllerName[0], controllerName[1]);
 });
 
-app.listen(80);
+
+
+var httpsServer = https.createServer(app);
+httpsServer.listen(443);
+var httpServer = http.createServer(app);
+httpServer.listen(80);
