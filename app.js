@@ -94,8 +94,15 @@ endpoints.map((controllerName) => {
 });
 
 
-
+/*
+var options = {
+   key  : "11edbf3a71d54fed81d223e696f5e047c0ed1",
+   cert : ""
+};
+var httpsServer = https.createServer(options, app);
+*/
 var httpsServer = https.createServer(app);
-httpsServer.listen(443);
 var httpServer = http.createServer(app);
+
+httpsServer.listen(443);
 httpServer.listen(80);
