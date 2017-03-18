@@ -94,14 +94,16 @@ endpoints.map((controllerName) => {
 });
 
 
-/*
+var sslKey = fs.readFileSync('key.pem');
+var sslCert = fs.readFileSync('cert.pem');
 var options = {
-   key  : "11edbf3a71d54fed81d223e696f5e047c0ed1",
-   cert : ""
+   key  : sslKey,
+   cert : sslCert
 };
 var httpsServer = https.createServer(options, app);
-*/
+/*
 var httpsServer = https.createServer(app);
+*/
 var httpServer = http.createServer(app);
 
 httpsServer.listen(443);
