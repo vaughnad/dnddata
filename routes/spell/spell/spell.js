@@ -4,7 +4,7 @@ module.exports = {
         // SELECT
         var sql = `SELECT 
         dnd_spell.id AS itemid, 
-        dnd_spell.name, dnd_spell.slug,
+        dnd_spell.*, 
         dnd_spellschool.id AS spellschool_id, 
         dnd_spellschool.name AS spellschool_name, 
         dnd_spellschool.slug AS spellschool_slug,
