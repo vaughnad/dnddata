@@ -82,11 +82,11 @@ module.exports = {
                 {'path':'/spell-domain/:id', 'show':'', 'render':true, 'children':false, 'menu':'Spell Domain', 'alias':'spell-domain-id'},
                 {'path':'/spell-domain/:id/spells', 'show':'', 'render':true, 'children':false, 'menu':'Spell Domain Spells', 'alias':'spell-domain-id-spells'},
 				
-                {'path':'/spell-school', 'show':'/spell', 'render':true, 'children':false, 'menu':'Spell Schools', 'alias':'spell-domain'},
+                {'path':'/spell-school', 'show':'/spell', 'render':true, 'children':false, 'menu':'Spell Schools', 'alias':'spell-school'},
                 {'path':'/spell-school/:id', 'show':'', 'render':true, 'children':false, 'menu':'Spell School', 'alias':'spell-school-id'},
                 {'path':'/spell-school/:id/spells', 'show':'', 'render':true, 'children':false, 'menu':'Spell School Spells', 'alias':'spell-school-id-spells'},
 				
-                {'path':'/spell-subschool', 'show':'/spell', 'render':true, 'children':false, 'menu':'Spell Subschools', 'alias':'spell-domain'},
+                {'path':'/spell-subschool', 'show':'/spell', 'render':true, 'children':false, 'menu':'Spell Subschools', 'alias':'spell-subschool'},
                 {'path':'/spell-subschool/:id', 'show':'', 'render':true, 'children':false, 'menu':'Spell Subschool', 'alias':'spell-subschool-id'},
                 {'path':'/spell-subschool/:id/spells', 'show':'', 'render':true, 'children':false, 'menu':'Spell Subschool Spells', 'alias':'spell-subschool-id-spells'},
 				
