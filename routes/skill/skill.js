@@ -3,9 +3,12 @@ module.exports = {
         
         // SELECT
         var sql = `SELECT 
-        dnd_skillvariant.id AS itemid, 
-        dnd_skill.name, 
+        dnd_skill.slug AS itemid,
+        dnd_skill.name,
         dnd_skill.slug, 
+        dnd_skill.base_skill, 
+        dnd_skill.trained_only, 
+        dnd_skill.armor_check_penalty, 
         dnd_rulebook.id AS rulebook_id, 
         dnd_rulebook.name AS rulebook_name, 
         dnd_rulebook.slug AS rulebook_slug

@@ -3,7 +3,7 @@ module.exports = {
         
         // SELECT
         var sql = `SELECT 
-        dnd_spellschool.id AS itemid, 
+        dnd_spellschool.slug AS itemid, 
         * 
         
         FROM dnd_spellschool

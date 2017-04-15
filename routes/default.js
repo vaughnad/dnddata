@@ -19,12 +19,9 @@ module.exports = {
             endpoints.forEach(function(item, i){
                 html += "<li>";
                 
-				if(item[0].indexOf(":id") > -1 || item[0].indexOf(":rid") > -1 || item[0].indexOf(":sid") > -1){
+				if(item[0].indexOf(":rid") > -1 || item[0].indexOf(":sid") > -1){
 					html += "<span>";
 					html += "" + item[0] + "";
-					if(item[0].indexOf(":id") > -1) {
-						html += " <em>(:id = itemid)</em>";
-					} 
 					if(item[0].indexOf(":rid") > -1) {
 						html += " <em>(:rid = slug)</em>";
 					}

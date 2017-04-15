@@ -3,7 +3,7 @@ module.exports = {
         
         // SELECT
         var sql = `SELECT 
-        dnd_deity.id AS itemid, 
+        dnd_deity.slug AS itemid, 
         dnd_deity.* 
         
         FROM dnd_deity
